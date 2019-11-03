@@ -2,8 +2,18 @@
 仅供学习 docker
 使用docker-compose 一键搭建 代理服务，并获得一个静态博客。
 
-nginx --tls--> shadowsocks ---> v2ray-plugin
-      --tls-->  html  
+```
+  your.domain.com 
+  |
+  └--> cloudflare CDN 
+          |
+          |
+          |         ┌--tls--> shadowsocks ---> v2ray-plugin
+          V         |
+     docker ━━━━━>nginx
+                    |
+                    └--tls-->  html（blog）  
+```
 
 不套cf,建议选择（docker + v2ray + caddy )，caddy 自动tls申请非常方便！
 
