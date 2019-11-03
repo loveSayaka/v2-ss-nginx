@@ -40,6 +40,8 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 f763eaaadd19        ss-v2ray            "/bin/sh -c 'ss-serv…"   7 days ago          Up 7 days           0.0.0.0:1088->1088/tcp                     v2-ss-nginx_ss-v2ray_1
 ```
 
-## 为了性能 ，network_mode最好能用host模式，但是我是在Mac上测试的，Mac 的docker 不支持 host模式。只能让docker虚拟一个网卡，做桥接模式。
+为了性能 ，network_mode最好能用host模式，但是我是在Mac上测试的，Mac 的docker 不支持 host模式。只能让docker虚拟一个网卡，做桥接模式。
+
 ```network_mode: "host"```
-## 并不建议在vps 里面用着一套东西，本身是虚拟机，v2ray 又套在docker里，docker还要虚拟一个网卡，而v2ray服务又是跟网络密不可分的（除非基于容器云搭建。
+
+并不建议在vps 里面用着一套东西，本身是虚拟机，v2ray 又套在docker里，docker还要虚拟一个网卡，而v2ray服务又是跟网络密不可分的（除非基于容器云搭建。
