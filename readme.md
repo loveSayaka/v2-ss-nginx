@@ -19,7 +19,7 @@
 
 
 
-## usage
+## Usage
 安装 docker-compose 最新版本
  
 command + R repalce sg.domain.com to your domain.
@@ -28,10 +28,11 @@ $ git clone && cd v2-ss-nginx
 
 generate and save your cf ssl to: cert -> pem/domain.pem  key ->pem/domian.key
 
-先确认 80和 443没有被占用
+confirm 80, 443 not in using.
+
 $ docker-compose up -d
 
-$ docker ps #这样就算成功
+$ docker ps #成功
 ```sh
 root@domain# docker ps
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                      NAMES
