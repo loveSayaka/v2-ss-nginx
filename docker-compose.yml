@@ -1,0 +1,37 @@
+version: '3.4'
+services:
+  webserver:
+    image: ss-v2-webserver
+    build: 
+      context: .
+      dockerfile: ./build/webserver/Dockerfile
+    environment:
+      NODE_ENV: production
+    restart: always
+    networks: 
+      - fuck
+    volumes: 
+      - ~/vps:/home/vps
+    # depends_on:
+    #   - ss-v2ray
+    ports:
+      - 443:443
+      - 80:80
+
+  ss-v2ray:
+    image: ss-v2ray
+    build: 
+      context: .
+      dockerfile: ./build/ss-v2/Dockerfile
+    environment:
+      NODE_ENV: production
+    # command:
+    restart: always
+    networks: 
+      - fuck
+    ports:
+      - 1088:1088
+
+networks:
+  fuck:
+    driver: bridge  
